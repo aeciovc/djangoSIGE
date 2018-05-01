@@ -10,3 +10,4 @@ cryptography==2.2.*
 lxml==4.2.*
 pyOpenSSL==17.5.*
 signxml==2.5.*
+psycopg2==2.7.4
