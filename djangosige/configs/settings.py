@@ -6,8 +6,6 @@ from .configs import DEFAULT_DATABASE_URL, DEFAULT_FROM_EMAIL, EMAIL_HOST, EMAIL
 APP_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(APP_ROOT))
 
-print("APP_ROOT", APP_ROOT)
-print("PROJECT_ROOT", PROJECT_ROOT)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -62,6 +60,12 @@ MIDDLEWARE = [
     # Middleware para paginas que exigem login
     'djangosige.middleware.LoginRequiredMiddleware',
 ]
+
+MIDDLEWARE_CLASSES = (
+     # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware'
+)
 
 ROOT_URLCONF = 'djangosige.urls'
 
@@ -148,3 +152,8 @@ LOGIN_NOT_REQUIRED = (
     r'/login/trocarsenha/',
     r'/logout/',
 )
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
