@@ -1,2 +1,2 @@
 python manage.py migrate
-web: gunicorn myquote.wsgi --log-file -
+web: gunicorn djangosige.wsgi --log-file -
