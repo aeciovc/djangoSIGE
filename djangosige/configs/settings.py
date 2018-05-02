@@ -6,6 +6,8 @@ from .configs import DEFAULT_DATABASE_URL, DEFAULT_FROM_EMAIL, EMAIL_HOST, EMAIL
 APP_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(APP_ROOT))
 
+print("APP_ROOT", APP_ROOT)
+print("PROJECT_ROOT", PROJECT_ROOT)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -128,6 +130,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(APP_ROOT, 'static'),
+    os.path.join(PROJECT_ROOT, 'static'),
 ]
 
 FIXTURE_DIRS = [
